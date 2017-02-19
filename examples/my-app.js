@@ -2,7 +2,7 @@
 // initial app object and the app code extends and returns it.
 
 var LIB = require('lib/std.js');
-var APP = require('my-app-conf.js');			// my app config (optional)
+var APP = require('examples/my-app-conf.js');			// my app config (optional)
 
 APP.main = function() {
 	DBG(APP.GREETING);
