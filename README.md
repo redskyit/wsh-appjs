@@ -169,5 +169,5 @@ Writes a database BLOB field to the named file using `ADODB.Stream`.
 
 # Limitations
 
-1. At the moment, a require() will only find modules relative to the folder that app.js is located in.
+1. At the moment, a `require()` will only find modules relative to the folder that `app.js` is located in.
 See Issue #1.  Ideally modules should be loaded relative to the requiring module.
