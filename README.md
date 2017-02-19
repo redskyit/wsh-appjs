@@ -21,7 +21,7 @@ git clone https://github.com/redskyit/wsh-appjs
 
 ## Create a Basic Application (myapp.js)
 
-An app is just another `wsh-appjs` module that also exports a main() method.  Once loaded the main() method is called.
+An app is just another `wsh-appjs` module that also exports a `main()` method.  Once loaded the `main()` method is called.
 
 ```
 var LIB = require('lib/std');
@@ -37,7 +37,7 @@ return {
 ## Run It
 
 ```
-cscript app.js ./myapp.js
+cscript app.js ./myapp
 ```
 
 # The Module Pattern
@@ -71,11 +71,11 @@ var LIB = require('lib/std');
 
 ### `DBG(string)`
 
-`DBG` is a global function that will output the passed string to standard output.  It is a convenient shortcut to WScript.echo();
+`DBG` is a global function that will output the passed string to standard output.  It is a convenient shortcut to `WScript.echo()`.
 
 ### `array.indexOf(value)`
 
-Adds an indexOf method to array objects.
+Adds an `indexOf` method to array objects.
 
 ### `LIB.CreateObject(name)`
 
@@ -83,7 +83,7 @@ Works like Server.CreateObject, it is really just an alias for `new ActiveXObjec
 
 ## lib/sendmail
 
-This library provides a sendmail function that uses wither CDO (the default) or Persists.MailSender to send an email.
+This library provides a sendmail function that uses wither CDO (the default) or `Persists.MailSender` to send an email.
 ```
 var MAIL = require('lib/sendmail');
 ```
@@ -146,6 +146,18 @@ This returns a database object to the opened database.  The object provides the 
 | `insert(table, cols)` | Use a recordset `addNew()` to insert a record.  `cols` should be a { name: value, ... } hash map. |
 | `close()` | Close the datebase connection |
 | `reopen()` | Reopen the datebase connection |
+
+### `quoteString(str)`
+
+Quotes a string for inclusion in a SQL string.
+
+### `blob2Text(blobField, charset)`
+
+Converts a database BLOB to text based on charset.
+
+### `saveBlob(filename, blobField)`
+
+Writes a database BLOB field to the named file using `ADODB.Stream`.
 
 #### See also
 
