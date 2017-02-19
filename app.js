@@ -37,6 +37,7 @@
 
 function require(FN) {
 	var cache = require.__cache = require.__cache || {};
+  if (FN.substr(FN.length-3) !== '.js') FN += ".js";
 	if (cache[FN]) return cache[FN];
 	var FSO = WScript.CreateObject("Scripting.FileSystemObject");
 	var T = null;
